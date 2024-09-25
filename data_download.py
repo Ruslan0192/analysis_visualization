@@ -1,10 +1,4 @@
-# Цель:
-# Реализовать функцию calculate_and_display_average_price(data), которая вычисляет и выводит среднюю цену закрытия акций за заданный период.
-#
-# Реализация:
-# Функция будет принимать DataFrame и вычислять среднее значение колонки 'Close'. Результат будет выводиться в консоль.
-#
-#
+
 import numpy
 import pandas as pd
 import yfinance as yf
@@ -25,3 +19,21 @@ def calculate_and_display_average_price(data):
     values = data_close.values
     avr_close = round(numpy.average(values), 13)
     print(f'Средняя цена закрытия акций за заданный период {avr_close}')
+
+
+def notify_if_strong_fluctuations(data, threshold):
+    data_close = data['Close']
+    values = data_close.values
+
+    min_value = values[0]
+    max_value = values[0]
+
+    for value in values:
+        if value <  min_value:
+            min_value = value
+        elif value > max_value:
+            max_value = value
+
+    value_threshold = float(max_value-min_value)
+    if  value_threshold > threshold:
+        print(f'Разница цен закрытия акций за заданный период превышает порог! И составляет {value_threshold}')
