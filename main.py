@@ -37,6 +37,5 @@ def main():
     dd.export_data_to_csv(stock_data, "data")
 
 
-
 if __name__ == "__main__":
     main()
