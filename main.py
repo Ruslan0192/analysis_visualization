@@ -19,7 +19,6 @@ def main():
     # period = '5d'
     # threshold = 20
 
-
     # Fetch stock data
     stock_data = dd.fetch_stock_data(ticker, period)
 
