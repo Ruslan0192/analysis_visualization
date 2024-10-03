@@ -38,6 +38,7 @@ def notify_if_strong_fluctuations(data, threshold):
     if  value_threshold > threshold:
         print(f'Разница цен закрытия акций за заданный период превышает порог! И составляет {value_threshold}')
 
+
 def export_data_to_csv(data, filename):
     data.to_csv(f'{filename}.csv', index=False)
 
