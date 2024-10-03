@@ -30,7 +30,6 @@ def notify_if_strong_fluctuations(data, threshold):
     # анализ на максимальное и минимальное значения
     for value in values:
         if value <  min_value:
-
             min_value = value
         elif value > max_value:
             max_value = value

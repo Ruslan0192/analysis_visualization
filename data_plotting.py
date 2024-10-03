@@ -30,6 +30,7 @@ def create_and_save_plot(data, ticker, period, filename=None):
     plt.savefig(filename)
     print(f"График сохранен как {filename}")
 
+
 def show_data_with_indicator(data, ticker):
     plt.figure(figsize=(14, 7))
     if 'Date' not in data:
